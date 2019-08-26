@@ -127,7 +127,8 @@ namespace Nesemuto
                           | (values[4] & 7) | (values[3] & 8);
 
 
-            if (gameGenieCode.Length == 6)
+            bool hasCompareValue = gameGenieCode.Length == 8;
+            if (!hasCompareValue)
             {
                 var value =
                     ((values[1] & 7) << 4) | ((values[0] & 8) << 4)
@@ -161,14 +162,14 @@ namespace Nesemuto
                 CompareValue = compareValue ?? -1,
                 Value = patchValue
             };
-            m_PossibleCheatNearbyAddr[addr >> 3] = true;
+            m_PossibleCheatNearAddr[addr >> 3] = true;
             m_Cheats[Count] = cheat;
             Count += 1;
         }
 
         public byte InterceptRead(ushort addr, byte knownValue)
         {
-            if (!m_PossibleCheatNearbyAddr[addr >> 3])
+            if (!m_PossibleCheatNearAddr[addr >> 3])
             {
                 // optimization: no cheat near this addr, no need to do any further checks
                 return knownValue;
@@ -217,7 +218,7 @@ namespace Nesemuto
         };
 
         const int k_MaxCheatCount = 64;
-        readonly bool[] m_PossibleCheatNearbyAddr = new bool[(0xffff >> 3) + 1];
+        readonly bool[] m_PossibleCheatNearAddr = new bool[(0xffff >> 3) + 1];
         readonly Cheat[] m_Cheats = new Cheat[k_MaxCheatCount];
     }
 }

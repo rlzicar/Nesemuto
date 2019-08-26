@@ -57,7 +57,8 @@ namespace Nesemuto
             {
                 using (var window = new EmulatorWindow(nes, VSyncMode.On))
                 {
-                    window.Run(0, 60);
+                    const int nesFramesPerSecond = 60;
+                    window.Run(0, nesFramesPerSecond);
                 }
             }
         }

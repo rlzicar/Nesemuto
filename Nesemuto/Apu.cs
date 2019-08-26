@@ -22,6 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+// #define NO_APU
+
 using OpenTK.Audio;
 using OpenTK.Audio.OpenAL;
 using System;

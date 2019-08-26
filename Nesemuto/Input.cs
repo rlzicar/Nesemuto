@@ -57,7 +57,8 @@ namespace Nesemuto
             var configLines = File.ReadAllLines("controls.cfg");
             foreach (var config in configLines)
             {
-                if (!config.StartsWith("Button_"))
+                const string prefix = "Button_";
+                if (!config.StartsWith(prefix))
                 {
                     continue;
                 }
@@ -66,7 +67,7 @@ namespace Nesemuto
                 var buttonName = lineParts[0];
                 var keyName = lineParts[1];
                 var button = (GamepadButton) Enum.Parse(typeof(GamepadButton),
-                    buttonName.Substring("Button_".Length));
+                    buttonName.Substring(prefix.Length));
                 var key = (Key) Enum.Parse(typeof(Key), keyName);
                 m_ButtonsByKey[key] = button;
             }

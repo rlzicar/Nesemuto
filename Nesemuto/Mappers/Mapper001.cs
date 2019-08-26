@@ -92,7 +92,7 @@ namespace Nesemuto.Mappers
             }
 
             bool isPrgRamAddr = addr >= 0x6000 && addr <= 0x7fff;
-            if (m_PrgRamEnabled && isPrgRamAddr)
+            if (isPrgRamAddr)
             {
                 return Access(m_PrgRam, addr - 0x6000, mode, value);
             }
@@ -144,7 +144,6 @@ namespace Nesemuto.Mappers
 
                 m_SelectedPrgBankOffset0 -= 0x8000;
                 m_SelectedPrgBankOffset1 -= 0xc000;
-                m_PrgRamEnabled = ((value >> 4) & 1) == 1;
             }
             else if (isChrBank0SelectAddr)
             {
@@ -189,7 +188,10 @@ namespace Nesemuto.Mappers
 
                 var prgRomBankModeInt = (value >> 2) & 3;
                 var chrRomBankModeInt = (value >> 4) & 1;
-                m_ChrRomBankMode = chrRomBankModeInt == 0 ? ChrRomBankMode.Switch8K : ChrRomBankMode.Switch2X4K;
+                m_ChrRomBankMode = chrRomBankModeInt == 0
+                    ? ChrRomBankMode.Switch8K
+                    : ChrRomBankMode.Switch2X4K;
+
                 switch (prgRomBankModeInt)
                 {
                     case 0:
@@ -240,9 +242,6 @@ namespace Nesemuto.Mappers
         const byte k_ShiftRegisterInitialValue = 0x10;
 
         byte m_ShiftRegister = k_ShiftRegisterInitialValue;
-
-        bool m_PrgRamEnabled;
-
         readonly byte[] m_PrgRam = new byte[0x8000];
     }
 }

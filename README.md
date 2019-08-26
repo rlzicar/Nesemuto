@@ -3,11 +3,8 @@ Nesemuto is an NES emulator written in C#/C++.
 
 I'm aiming to strike a balance between performance and cache-friendliness on the one hand and decent code readability and maintainability on the other.
 
-![enter image description here](https://i.imgur.com/dY88qS6.png =257x256) ![enter image description here](https://i.imgur.com/dLz9uRz.png =257x256) ![enter image description here](https://i.imgur.com/URow4P3.png =257x256) ![enter image description here](https://i.imgur.com/fx7gDLC.png =257x256) ![enter image description here](https://i.imgur.com/zvc7tvm.png =257x256)![enter image description here](https://i.imgur.com/YBlpIr1.png =257x256)
-![enter image description here](https://i.imgur.com/JviNxlb.png =257x256) ![enter image description here](https://i.imgur.com/jex5oEs.png =257x256)![enter image description here](https://i.imgur.com/orP8zeX.png =257x256)
-
-
-
+![](https://i.imgur.com/dY88qS6m.png) ![](https://i.imgur.com/dLz9uRzm.png) ![](https://i.imgur.com/URow4P3m.png) ![](https://i.imgur.com/fx7gDLCm.png) ![](https://i.imgur.com/zvc7tvmm.png) ![](https://i.imgur.com/YBlpIr1m.png)
+![](https://i.imgur.com/JviNxlbm.png) ![](https://i.imgur.com/jex5oEsm.png)
   
 ## Compatibility  
 Only the NTSC video system is supported (USA/Japan). PAL games aren't guaranteed to work. I haven't implemented the APU IRQs, so games that rely on the APU for timing purposes won't work properly.  

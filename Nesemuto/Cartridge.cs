@@ -105,6 +105,9 @@ namespace Nesemuto
                         case 66:
                             Mapper = new Mapper066(prgRom, chrRom, Mirroring);
                             break;
+                        case 225:
+                            Mapper = new Mapper225(prgRom, chrRom);
+                            break;
                     }
                 }
             }

@@ -68,6 +68,7 @@
     <Compile Include="Mappers\Mapper004.cs" />
     <Compile Include="Mappers\Mapper007.cs" />
     <Compile Include="Mappers\Mapper066.cs" />
+    <Compile Include="Mappers\Mapper225.cs" />
     <Compile Include="MemoryAccessMode.cs" />
     <Compile Include="Mirroring.cs" />
     <Compile Include="Nes.cs" />

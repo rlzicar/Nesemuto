@@ -16,7 +16,8 @@ The following mappers have been implemented:
 * CNROM (003)  
 * MMC3 (004)  
 * AxROM (007)  
-* GxROM (066)  
+* GxROM (066) 
+* Mapper 225 
   
 All the official CPU opcodes and some of the unofficial ones are implemented.  
   

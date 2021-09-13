@@ -1,5 +1,5 @@
 # Nesemuto  
-Nesemuto is an NES emulator written in C#/C++.
+Nesemuto is an NES emulator written in C# (with an optional dependency on a C++ library for sound emulation).
 
 I'm aiming to strike a balance between performance and cache-friendliness on the one hand and decent code readability and maintainability on the other.
 
